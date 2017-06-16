@@ -1,0 +1,29 @@
+<simulation name="edf">
+
+<duration value="1" units="sec"/>
+
+<runnable type="scheduler" algorithm="EDF">
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="100"  units="ms" />
+      <wcet   value="20" units="ms" />
+      <relative_deadline value="80" units="ms" />
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="100"  units="ms" />
+      <wcet   value="20" units="ms" />
+      <relative_deadline value="100" units="ms" />
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="100"  units="ms" />
+      <wcet   value="20" units="ms" />
+      <relative_deadline value="40" units="ms" />
+   </runnable>
+
+</runnable>
+
+</simulation>
+
+

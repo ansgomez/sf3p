@@ -1,0 +1,53 @@
+<simulation name="fixedprioritytop">
+
+<duration value="1" units="sec"/>
+
+<runnable type="scheduler" algorithm="FixedPriority">
+
+   <runnable type="scheduler" algorithm="EDF">
+      <runnable type="worker" periodicity="periodic" task="busy_wait">
+         <period value="51"  units="ms" />
+         <wcet   value="9" units="ms" />
+         <relative_deadline value="40" units="ms" />
+         <criteria type="inclusive">
+            <relative_deadline value="60" units="ms" />  
+            <priority value="20" />
+         </criteria>
+      </runnable>
+      <runnable type="worker" periodicity="periodic" task="busy_wait">
+         <period value="51"  units="ms" />
+         <wcet   value="9" units="ms" />
+         <relative_deadline value="60" units="ms" />
+         <criteria type="inclusive">
+            <relative_deadline value="50" units="ms" />
+            <priority value="30" />
+         </criteria>
+      </runnable>
+   </runnable>
+
+   <runnable type="scheduler" algorithm="FIFO">
+      <runnable type="worker" periodicity="periodic" task="busy_wait">
+         <offset value="14" units="ms" />
+         <period value="51"  units="ms" />
+         <wcet   value="9" units="ms" />
+         <relative_deadline value="40" units="ms" />
+         <criteria type="inclusive">
+            <priority value="15" />
+         </criteria>
+      </runnable>
+      <runnable type="worker" periodicity="periodic" task="busy_wait">
+         <offset value="15" units="ms" />
+         <period value="51"  units="ms" />
+         <wcet   value="9" units="ms" />
+         <relative_deadline value="22" units="ms" />
+         <criteria type="inclusive">
+            <priority value="25" />
+         </criteria>
+      </runnable>
+   </runnable>
+   
+</runnable>
+
+</simulation>
+
+

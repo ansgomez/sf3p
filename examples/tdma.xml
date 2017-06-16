@@ -1,0 +1,32 @@
+<simulation name="tdma">
+
+<duration value="1" units="sec"/>
+
+<runnable type="scheduler" algorithm="TDMA">
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="81"  units="ms" />
+      <wcet   value="19" units="ms" />
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="81"  units="ms" />
+      <wcet   value="19" units="ms" />
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="81"  units="ms" />
+      <wcet   value="19" units="ms" />
+   </runnable>
+
+   <time_slots>
+     <time_slot value="25" units="ms" />
+     <time_slot value="25" units="ms" />
+     <time_slot value="25" units="ms" />
+   </time_slots>
+
+</runnable>
+
+</simulation>
+
+

@@ -1,0 +1,39 @@
+<simulation name="fixedpriority">
+
+<duration value="1" units="sec"/>
+
+<runnable type="scheduler" algorithm="FixedPriority">
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="71"  units="ms" />
+      <wcet   value="19" units="ms" />
+      <relative_deadline value="40" units="ms" />
+      <criteria type="inclusive">
+         <priority value="27" />
+      </criteria>
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <offset value="5" units="ms" />
+      <period value="71"  units="ms" />
+      <wcet   value="19" units="ms" />
+      <relative_deadline value="20" units="ms" />
+      <criteria type="inclusive">
+         <priority value="30" />
+      </criteria>
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <period value="71"  units="ms" />
+      <wcet   value="19" units="ms" />
+      <relative_deadline value="60" units="ms" />
+      <criteria type="inclusive">
+         <priority value="25" />
+      </criteria>
+   </runnable>
+
+</runnable>
+
+</simulation>
+
+

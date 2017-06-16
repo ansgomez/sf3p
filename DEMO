@@ -1,0 +1,53 @@
+*************************************************************
+*
+*  SF3P FRAMEWORK DEMO
+*
+*************************************************************
+
+1. Open Terminal, change to your SF3P directory. To install, follow instructions in the README file.
+
+2. Type the following commands:
+
+	source sf3p_paths.sh
+	alias sudo='sudo env PATH=$PATH $@'
+
+    Description: These commands sets path variables, and configure 'sudo' with new paths
+ 
+3. Type "cd examples"
+
+    Description: This is where all the sample files are located. These are the default ones:
+                 Each file describes the topology for different schedulers and parameters
+                 such as simulation time, task periods, WCET, etc.
+
+        edf.xml
+        fifo.xml
+        fixedpriority.xml
+        fixedpriority_top.xml
+        tdma.xml
+        tdma_top.xml
+
+4. Run the simulation, type "simulate edf"
+
+    Description: 
+
+        Simulation Phase
+                 This will run the simulation, and generate several output files which 
+                 need to be processed. They include timestamps and thread runtimes used
+                 to determine metrics such as missed deadlines, and scheduling costs.
+
+        Post-Processing Phase
+                 This will process all the log files and calculate all releveant metrics. 
+                 The results, with some basic statistics will be shown on screen.
+
+
+    Metrics:
+
+         Resource allocation cost - overhead from scheduling and context switching
+
+         System Cost - includes also the 'dispatching' overhead, or generating tasks arrivals
+
+
+
+
+
+

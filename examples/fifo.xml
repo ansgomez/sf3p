@@ -1,0 +1,32 @@
+<simulation name="fifo">
+
+<duration value="1" units="sec"/>
+
+<runnable type="scheduler" algorithm="FIFO">
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <offset value="3" units="ms" />
+      <period value="71"  units="ms" />
+      <wcet   value="19" units="ms" />
+      <relative_deadline value="40" units="ms" />
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <offset value="2" units="ms" />
+      <period value="71"  units="ms" />
+      <wcet   value="19" units="ms" />
+      <relative_deadline value="20" units="ms" />
+   </runnable>
+
+   <runnable type="worker" periodicity="periodic" task="busy_wait">
+      <offset value="5" units="ms" />
+      <period value="71"  units="ms" />
+      <wcet   value="19" units="ms" />
+      <relative_deadline value="60" units="ms" />
+   </runnable>
+
+</runnable>
+
+</simulation>
+
+
